@@ -13,9 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -27,11 +30,9 @@ public class MainActivity extends AppCompatActivity {
     Timer timer;
     TextView restoname;
     CircleImageView image;
-    EditText username;
-    EditText email;
-    EditText password;
-    Button login;
-    Button register;
+    EditText et_email;
+    EditText username,email,password;
+    Button login,register;
     TextInputLayout til;
 
     @Override
@@ -48,14 +49,6 @@ public class MainActivity extends AppCompatActivity {
        password=(EditText)findViewById(R.id.password);
        login=(Button)findViewById(R.id.login_btn);
        register=(Button)findViewById(R.id.register_btn);
-
-
-       TextInputLayout til= (TextInputLayout)findViewById(R.id.etusername);
-
-           til.setErrorEnabled(false);
-           til.setError("You need to enter a name");
-
-
 
 
 
@@ -85,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
                Intent login;
                login=new Intent(MainActivity.this,Activity2.class);
                startActivity(login);
+
+              
+
+
+
+
+
            }
        });
 
