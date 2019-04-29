@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+
+
+
+    <item
+        android:title="Add Dishes"
+        android:id="@+id/add_dishes"
+        android:icon="@drawable/adddishes"/>
+        <item
+            android:title="Receipt Dishes"
+            android:id="@+id/receipt_dishes"
+            android:icon="@drawable/receipt"/>
+        <item
+            android:title="View Dishes"
+            android:id="@+id/view_dishes"
+            android:icon="@drawable/view"/>
+        <item
+            android:title="Favourable Dishes"
+            android:id="@+id/favourable"
+            android:icon="@drawable/favourable"/>
+        <item
+            android:title="Resto Near Youu"
+            android:id="@+id/resto"
+            android:icon="@drawable/near"/>
+        android:icon="@drawable/near"/>
+        <item
+            android:title="Log In"
+            android:id="@+id/login"
+            android:icon="@drawable/login"/>
+        <item
+            android:title="Log Out"
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"/>
+
+
+
+    </group>
+
+
+</menu>
