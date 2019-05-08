@@ -72,18 +72,17 @@ public class MainActivity extends AppCompatActivity {
            }
        },8000,1000);
 
+
        login.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent login;
-               login=new Intent(MainActivity.this,Activity2.class);
-               startActivity(login);
+               if (username.getText().toString().equals("username")&&password.getText().toString().equals("password")){
 
-              
+                   Intent login;
+                   login=new Intent(MainActivity.this,Activity2.class);
+                   startActivity(login);
 
-
-
-
+               }
 
            }
        });
