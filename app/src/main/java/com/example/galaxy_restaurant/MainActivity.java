@@ -83,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
                    startActivity(login);
 
                }
+               else {
+                   Toast.makeText(this, "Invalid username or password", Toast.LENGTH_LONG).show();
+           }
+               }
 
            }
        });
