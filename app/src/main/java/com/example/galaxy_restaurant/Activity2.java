@@ -1,26 +1,21 @@
 package com.example.galaxy_restaurant;
 
-import android.app.Activity;
-import android.media.Image;
+
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
 
-public class Activity2 extends AppCompatActivity {
+public class Activity2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     Toolbar toolbar;
     DrawerLayout drawerLayout;
@@ -35,32 +30,10 @@ public class Activity2 extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
-        ArrayList<String> Dishesname= new ArrayList<>();
-        Dishesname.add("Dish1");
-        Dishesname.add("Dish2");
-        Dishesname.add("Dish3");
-        Dishesname.add("Dish4");
-        Dishesname.add("Dish5");
-        Dishesname.add("Dish6");
-        Dishesname.add("Dish7");
-        Dishesname.add("Dish8");
-        Dishesname.add("Dish9");
-        Dishesname.add("Dish10");
-        Dishesname.add("Dish11");
-        Dishesname.add("Dish12");
-        Dishesname.add("Dish13");
-        Dishesname.add("Dish14");
-        Dishesname.add("Dish15");
-
-        listView=(ListView) findViewById(R.id.listview);
-        ArrayAdapter<String>Adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,Dishesname);
-        listView.setAdapter(Adapter);
-
-
-
         drawerLayout =(DrawerLayout) findViewById(R.id.drawernavigation);
         navigationView =(NavigationView) findViewById(R.id.navigationview);
+        navigationView.setNavigationItemSelectedListener(this);
+
         ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_drawer,R.string.close_drawer);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
@@ -69,4 +42,58 @@ public class Activity2 extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+
+       int id= menuItem.getItemId();
+
+        switch(id){
+
+            case R.id.add_dishes:
+
+                Intent add_dishes= new Intent(Activity2.this,Activity3.class);
+                startActivity(add_dishes);
+                break;
+
+            case R.id.receipt_dishes:
+
+                Intent rec_dishes= new Intent(Activity2.this,Activity3.class);
+                startActivity(rec_dishes);
+                break;
+
+            case R.id.favourable:
+                Intent fav_dishes= new Intent(Activity2.this,Activity3.class);
+                startActivity(fav_dishes);
+                break;
+
+            case R.id.view_dishes:
+                Intent view_dishes= new Intent(Activity2.this,Activity3.class);
+                startActivity(view_dishes);
+                break;
+
+
+            case R.id.resto:
+                Intent near= new Intent(Activity2.this,Activity3.class);
+                startActivity(near);
+                break;
+
+            case R.id.login:
+                Intent login= new Intent(Activity2.this,Activity3.class);
+                startActivity(login);
+                break;
+
+            case R.id.logout:
+                Intent logout= new Intent(Activity2.this,MainActivity.class);
+                startActivity(logout);
+                break;
+
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
 }
+

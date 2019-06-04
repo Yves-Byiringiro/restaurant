@@ -3,9 +3,6 @@
 
     <group android:checkableBehavior="single">
 
-
-
-
     <item
         android:title="Add Dishes"
         android:id="@+id/add_dishes"
@@ -27,15 +24,21 @@
             android:id="@+id/resto"
             android:icon="@drawable/near"/>
         android:icon="@drawable/near"/>
-        <item
-            android:title="Log In"
-            android:id="@+id/login"
-            android:icon="@drawable/login"/>
-        <item
-            android:title="Log Out"
-            android:id="@+id/logout"
-            android:icon="@drawable/logout"/>
+        <item android:title="profile">
 
+            <menu>
+                <item
+                    android:title="Log In"
+                    android:id="@+id/login"
+                    android:icon="@drawable/login"/>
+                <item
+                    android:title="Log Out"
+                    android:id="@+id/logout"
+                    android:icon="@drawable/logout"/>
+
+
+            </menu>
+        </item>
 
 
     </group>
